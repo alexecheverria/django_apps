@@ -1,0 +1,103 @@
+body {
+  background-color: white; 
+}
+h1 {
+  text-align: center;
+}
+
+#mtb_l {
+  list-style-type: none;
+  padding: 0px;
+  overflow: hidden;
+  background-color: #333;
+  width:100%;
+}
+li.mtb_el{
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 0px;
+  text-decoration: none;
+  float:left;
+  border-left:white 1px solid;
+}
+li.mtb_er{
+  background-color: red;
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 0px;
+  text-decoration: none;
+  float:right;
+  border-left:white 1px solid;
+}
+
+.mtb_links, .mtb_links_active, .mtb_links_right {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding:8px 10px;
+  font-size:22px;
+}
+#homeIcon {
+  padding:0px;
+  font-size: 26px;
+}
+/*Note that the home icon needs to be marginally bigger to be the same size as 
+as the text in the main toolbar
+*/
+
+
+.mtb_el:hover, .dropdown:hover {
+  background-color: DodgerBlue;
+}
+.mtb_er:hover, .dropdown:hover {
+  background-color: DodgerBlue;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: grey;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+
+.dropdown-form {
+  text-align:left;
+  background-color: grey;
+}
+
+.dropdown-content-button {
+  background-color: grey;
+  border: none;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  text-align:center;
+}
+
+.dropdown-content form:hover {background-color: DodgerBlue;}
+
+.dropdown-form:hover {background-color: DodgerBlue;}
+
+.dropdown-content-button:hover {background-color: DodgerBlue;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#mtb_active {
+  background:DodgerBlue;
+
+}
+
+
+

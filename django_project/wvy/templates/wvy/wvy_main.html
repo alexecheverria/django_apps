@@ -1,0 +1,88 @@
+{% load static %}
+<html>
+    <head>
+    	<link rel="stylesheet" type="text/css" href="{% static 'wvy/wvy_main.css' %}">
+        <title> wvy Home Page!</title>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    </head>
+    <body>
+        <h1>wvy</h1>
+
+        <ul id = "mtb_l">
+            {% if home_active %}
+                <li class = "mtb_el" id = "mtb_active">
+            {% else %}
+                <li class = "mtb_el">
+            {% endif %}
+                    <a class="mtb_links_active" href="{% url 'wvy-home' %}"> 
+                        <i id="homeIcon" class="fa">&#xf015;</i>
+                    </a>
+                </li>
+            {% if projects_active %}
+                <li class = "mtb_el" id = "mtb_active">
+            {% else %}   
+                <li class = "mtb_el">
+            {% endif %}
+                    <div class="dropdown" id="mtb_project_drop_down">
+                        <a class="mtb_links" href="{% url 'wvy-projects' %}"> Projects</a> 
+                        <div class="dropdown-content">
+                            <form action="{% url 'wvy-projects' %}" method="post" enctype="multipart/form-data" class="dropdown-form">
+                                {% csrf_token %}
+                                <button type="submit" name="project_list" value="new-project" class="dropdown-content-button">New Project</button>
+                            </form>
+                            <form action="{% url 'wvy-projects' %}" method="post" enctype="multipart/form-data" class="dropdown-form">
+                                {% csrf_token %}
+                                <button type="submit" name="project_list" value="example-project" class="dropdown-content-button">Example Project</button>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+            {% if create_effect_active %}
+                <li class = "mtb_el" id = "mtb_active">
+            {% else %}   
+                <li class = "mtb_el">
+            {% endif %}
+                    <a class="mtb_links" href="{% url 'wvy-create-effect' %}"> Create an Effect</a>
+                </li>
+
+            {% if import_file_active %}
+                <li class = "mtb_el" id = "mtb_active">
+            {% else %}   
+                <li class = "mtb_el">
+            {% endif %}
+                    <div class="dropdown" id="mtb_project_drop_down">
+                    <a class="mtb_links" href="{% url 'wvy-import-file' %}"> Import a File</a>
+                        <div class="dropdown-content">
+                            <form action="{% url 'wvy-import-file' %}" method="post" enctype="multipart/form-data" class="dropdown-form">
+                                {% csrf_token %}
+                                <button type="submit" name="file_type" value=".csv" class="dropdown-content-button">.csv</button>
+                            </form>
+                            
+
+                            <form action="{% url 'wvy-import-file' %}" method="post" enctype="multipart/form-data" class="dropdown-form">
+                                {% csrf_token %}
+                                <button type="submit" name="file_type" value=".wav" class="dropdown-content-button">.wav</button>
+                            </form> 
+                        </div>
+                    </div>
+                </li>
+            {% if sign_in_active %}
+                <li class = "mtb_er" id = "mtb_active">
+            {% else %}   
+                <li class = "mtb_er">
+            {% endif %}
+                    <a class="mtb_links_right" href="{% url 'wvy-sign-in' %}"> Sign In</a>
+                </li>
+            {% if register_active %}
+                <li class = "mtb_er" id = "mtb_active">
+            {% else %}   
+                <li class = "mtb_er">
+            {% endif %}
+                    <a class="mtb_links_right" href="{% url 'wvy-register' %}"> Sign Up</a>
+                </li>
+        </ul>    
+
+    {% block content %}{% endblock %}
+
+    </body>
+</html>

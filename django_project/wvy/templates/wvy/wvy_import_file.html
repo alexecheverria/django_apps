@@ -1,0 +1,12 @@
+{% extends "wvy/wvy_main.html" %}
+
+{% block content %}
+	{% if file_type == 'Choose your file type!' %}
+		<h2>{{file_type}}</h2>
+	{% elif file_type == '.csv' or file_type == '.wav' %}
+		<h2>Import {{file_type}} File!</h2>
+	{% else %}
+		<h2>Hmmm, don't know that file type! File!</h2>
+	{% endif %}
+
+{% endblock content %}
