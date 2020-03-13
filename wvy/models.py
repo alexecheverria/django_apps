@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
-
+#from wvy import Wvy_User
 class Project(models.Model):
 	user = models.OneToOneField(User,on_delete=models.CASCADE)
 	project_name = models.CharField(max_length=100)

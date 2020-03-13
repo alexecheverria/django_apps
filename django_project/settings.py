@@ -28,7 +28,8 @@ SECRET_KEY =  os.environ.get('SECRET_KEY')
 DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 
 ALLOWED_HOSTS = ['wvyapp.herokuapp.com']
-
+if(os.environ.get('DEBUG_VALUE') == 'True'):
+    ALLOWED_HOSTS = ['wvyapp.herokuapp.com', 'localhost']
 
 # Application definition
 
@@ -150,4 +151,5 @@ AW3_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-django_heroku.settings(locals())
+if(os.environ.get('DEBUG_VALUE') != 'True'):
+    django_heroku.settings(locals())

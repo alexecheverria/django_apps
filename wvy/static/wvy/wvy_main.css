@@ -6,6 +6,7 @@ h1 {
 }
 
 #mtb_l {
+  font-family: "Times New Roman", Times, serif;
   list-style-type: none;
   padding: 0px;
   overflow: hidden;
@@ -13,6 +14,7 @@ h1 {
   width:100%;
 }
 li.mtb_el{
+  font-family: "Times New Roman", Times, serif;
   display: inline-block;
   color: white;
   text-align: center;
@@ -22,6 +24,7 @@ li.mtb_el{
   border-left:white 1px solid;
 }
 li.mtb_er{
+  font-family: "Times New Roman", Times, serif;
   background-color: red;
   display: inline-block;
   color: white;
@@ -33,6 +36,7 @@ li.mtb_er{
 }
 
 .mtb_links, .mtb_links_active, .mtb_links_right {
+  font-family: "Times New Roman", Times, serif;
   display: inline-block;
   color: white;
   text-align: center;
@@ -73,18 +77,25 @@ li.dropdown {
 .dropdown-form {
   text-align:left;
   background-color: grey;
+
 }
 
 .dropdown-content-button {
+  font-family: "Times New Roman", Times, serif;
   background-color: grey;
   border: none;
   color: white;
   text-decoration: none;
   cursor: pointer;
-  text-align:center;
+  text-align:left;
+  font-size: 18px;
 }
+  
 
 .dropdown-content form:hover {background-color: DodgerBlue;}
+
+.dropdown-content form:hover .dropdown-form {background-color: DodgerBlue;}
+.dropdown-content form:hover .dropdown-content-button {background-color: DodgerBlue;}
 
 .dropdown-form:hover {background-color: DodgerBlue;}
 
